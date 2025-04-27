@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+    <xsl:output method="html" encoding="UTF-8" indent="yes"/>
+
+    <xsl:template match="/">
+        <html>
+            <head>
+                <title>Listado de Motos</title>
+            </head>
+            <body>
+                <h2>Motos</h2>
+                <div class="cards-container">
+                    <xsl:for-each select="web/vehiculos/vehiculo[@tipo='Moto']">
+                        <div class="card">
+                            <img src="{imagen}" alt="{marca} {modelo}" class="card-image" />
+                            <h2><xsl:value-of select="marca"/> <xsl:value-of select="modelo"/></h2>
+                            <p><strong>Autonomía:</strong> <xsl:value-of select="autonomia"/> km</p>
+                            <p><strong>Potencia:</strong> <xsl:value-of select="potencia"/> CV</p>
+                            <p><strong>Precio:</strong> <xsl:value-of select="precio"/> €</p>
+                            <button class="buy-button">Comprar</button>
+                        </div>
+                    </xsl:for-each>
+                </div>
+            </body>
+        </html>
+    </xsl:template>
+</xsl:stylesheet>

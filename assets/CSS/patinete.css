@@ -1,0 +1,521 @@
+@import url('https://fonts.googleapis.com/css2?family=Sacramento&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {
+    background: #000080;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    color: white;
+}
+
+.header {
+    width: 100%;
+    height: 100px;
+    background: transparent;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+/* Botón de categorías */
+.btn-menu {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-left: -50px; /* Mueve "Categorías" hacia el borde izquierdo */
+}
+
+.btn-menu label {
+    font-size: 18px;
+    font-weight: bold;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.btn-menu label:hover {
+    background-color: #fb8d01;
+    color: white;
+}
+
+.btn-menu label::after {
+    content: '';
+    display: block;
+    height: 2px;
+    background: white;
+    width: 0;
+    transition: width 0.3s;
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+}
+
+.btn-menu label:hover::after {
+    width: 100%;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    margin-left: 200px;	
+	margin-right: 50px;
+}
+
+/* Campo de búsqueda */
+.menu input[type="text"] {
+    padding: 12px;
+    border-radius: 5px;
+    font-size: 16px;
+    border: 2px solid transparent;
+    width: 500px;
+    transition: border-color 0.3s;
+}
+
+.menu input[type="text"]:focus {
+    border-color: #003366;
+}
+
+.menu button {
+    background-color: #fb8d01;
+    padding: 12px;
+    border: 0;
+    border-radius: 5px;
+    color: #fff;
+}
+
+/* Enlaces del menú */
+.menu a {
+    font-size: 18px;
+    font-weight: bold;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 10px 15px;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.menu a:hover {
+    background-color: #fb8d01;
+    color: white;
+}
+
+.menu a::after {
+    content: '';
+    display: block;
+    height: 2px;
+    background: white;
+    width: 0;
+    transition: width 0.3s;
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+}
+
+.menu a:hover::after {
+    width: 100%;
+}
+
+.capa {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: -1;
+    top: 0;
+    left: 0;
+}
+
+#btn-menu {
+    display: none;
+}
+
+#btn-menu:checked ~ .capa,
+#btn-menu:checked ~ body {
+    overflow: hidden;
+} 
+.container-menu {
+    position: fixed; /* Fijar para que no se mueva */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh; /* Ocupar toda la pantalla */
+    background: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
+    z-index: 20;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 500ms ease;
+}
+
+#btn-menu:checked ~ .container-menu {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Ajustar el menú interno */
+.cont-menu {
+    width: 100%;
+    max-width: 250px;
+    height: 100vh; /* Asegurar que ocupe toda la altura de la pantalla */
+    overflow-y: auto; /* Agregar scroll si el contenido excede la pantalla */
+    background: #000080;
+    transition: transform 500ms ease;
+    transform: translateX(-100%);
+}
+
+#btn-menu:checked ~ .container-menu .cont-menu {
+    transform: translateX(0);
+}
+
+.cont-menu nav {
+    transform: translateY(15%);
+}
+
+.cont-menu nav a {
+    display: block;
+    text-decoration: none;
+    padding: 20px;
+    color: #c7c7c7;
+    border-left: 5px solid transparent;
+    transition: all 400ms ease;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.cont-menu nav a:hover {
+    border-left: 5px solid #fb8d01;
+    background: #1f1f1f;
+}
+
+
+.cont-menu nav h1 {
+    cursor: pointer;
+    color: #fb8d01; 
+    font-size: 22px; 
+    font-weight: bold;
+    text-align: left; 
+    padding-right: 100px; 
+    margin-top: 20px; 
+    margin-bottom: 20px; 
+}
+
+
+.cont-menu nav {
+    transform: translateY(10%); 
+}
+
+
+.cont-menu label {
+    position: absolute;
+    right: 5px;
+    top: 10px;
+    color: #ffffff;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+/* Imagen de portada */
+.cover-container {
+    width: 100%;
+    height: 80vh; /* Aumenta la altura de la imagen para que se extienda más hacia abajo */
+    position: relative;
+    overflow: hidden;
+}
+
+.cover-container .cover-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/* Botón y menú desplegable */
+.categories-dropdown {
+    position: relative;
+    text-align: left;
+    margin: 20px auto;
+}
+
+.categories-button {
+	margin-left: 10px;
+    background-color: #fb8d01;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.categories-button:hover {
+    background-color: #e67e00;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    color: #000080;
+    min-width: 150px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+    border-radius: 5px;
+}
+
+.dropdown-content a {
+    color: #000080;
+    text-decoration: none;
+    display: block;
+    padding: 10px;
+    font-size: 16px;
+}
+
+.dropdown-content a:hover {
+    background-color: #fb8d01;
+    color: white;
+}
+
+.categories-dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Alineación de las secciones de categorías */
+#artistas, #festivales {
+    margin-left: 120px;  /* Ajusta el valor según el espacio necesario */
+}
+
+
+
+/* Anuncio con mapa */
+.ad-container {
+    display: flex;
+    justify-content: space-between; /* Espacio entre mapa de imágenes y tarjetas */
+    align-items: flex-start; /* Alinear verticalmente las tarjetas y el mapa de imagen */
+    margin: 30px auto;
+    padding: 20px;
+    max-width: 1200px;
+    gap: 20px;
+}
+
+.ad-container img {
+    align-self: flex-start; /* Alinea la imagen arriba a la derecha */
+    margin-left: 20px; /* Empuja la imagen hacia la derecha */
+    max-width: 250px; /* Tamaño ajustado de la imagen */
+    height: auto;
+    border: 2px solid #ccc;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.cards-container {
+	width: 100%;
+    display: flex; /* Alinear las tarjetas en fila */
+    flex-wrap: wrap; /* Permite que se ajusten si no caben */
+    flex: 2; /* Las tarjetas ocupan más espacio */
+    gap: 20px; /* Espacio entre las tarjetas */
+}
+
+.card {
+    background: #ffffff;
+    color: #000080;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    padding: 20px;
+    transition: transform 0.3s ease;
+    width: 30%; /* Ancho fijo para las tarjetas */
+}
+
+.card {
+    background: #ffffff;
+    color: #000080;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    padding: 20px;
+    transition: transform 0.3s ease;
+    width: 30%; /* Ancho fijo para las tarjetas */
+    min-height: 400px; /* Altura mínima para todas las tarjetas */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Asegura que los elementos dentro de la tarjeta estén distribuidos */
+}
+
+.ad-container > img {
+    align-self: flex-start; /* Alinea la imagen del mapa arriba a la derecha */
+    margin-left: auto; /* Empuja la imagen hacia la derecha */
+    max-width: 250px; /* Ajusta el tamaño de la imagen */
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card-image {
+    width: 100%; /* Asegura que la imagen ocupe todo el ancho del contenedor */
+    height: 200px; /* Mantén una altura fija para todas las imágenes */
+    object-fit: contain; /* Hace que la imagen se ajuste al contenedor sin recortarse */
+    border-radius: 10px; /* Bordes redondeados */
+    margin-bottom: 15px;
+}
+
+.card h2 {
+    font-size: 1.5em;
+    color: #fb8d01;
+    margin-bottom: 10px;
+}
+
+.card p {
+    font-size: 1em;
+    margin: 10px 0;
+}
+
+.buy-button {
+    background-color: #fb8d01;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1em;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.buy-button:hover {
+    background-color: #e67e00;
+}
+
+
+
+/* Estilos del pie de página */
+.footer {
+    background-color: #003366; /* Fondo oscuro */
+    color: #ffffff; /* Texto blanco */
+    padding: 40px 0;
+    width: 100%;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+
+.footer-section {
+    flex: 1;
+    margin: 10px;
+}
+
+.footer-section h3 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    color: #fb8d01; /* Color de los títulos */
+}
+
+.footer-section p, .footer-section a {
+    font-size: 16px;
+    color: #c7c7c7;
+    text-decoration: none;
+    margin-bottom: 10px;
+    display: block;
+    transition: color 0.3s;
+}
+
+.footer-section a:hover {
+    color: #ffffff; /* Color del texto al pasar el cursor */
+}
+
+.footer-bottom {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #002244; /* Fondo ligeramente más oscuro */
+    font-size: 14px;
+    color: #c7c7c7;
+}
+/* Estilos de redes sociales en el pie de página */
+.social-media {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.social-media a {
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.social-media a img {
+    width: 30px;
+    height: 30px;
+}
+
+.twitter-icon img {
+    filter: brightness(0) invert(1);
+}
+
+.social-media a:hover {
+    transform: scale(1.1); /* Efecto de aumento al pasar el cursor */
+}
+
+.cover-container {
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.cover-container h1 {
+    font-size: calc(20px + 18vh);
+    line-height: calc(20px + 20vh);
+    text-shadow: 0 0 5px #ffa500, 0 0 15px #ffa500, 0 0 20px #ffa500, 0 0 40px #ffa500, 0 0 60px #ff0000, 0 0 10px #ff8d00, 0 0 98px #ff0000;
+    color: #fff6a9;
+    font-family: "Sacramento", cursive;
+    text-align: center;
+    animation: blink 12s infinite;
+    -webkit-animation: blink 12s infinite;
+    padding-top: 30px;
+}
+
+/* Animación de parpadeo */
+@keyframes blink {
+    20%, 24%, 55% {
+        color: #111;
+        text-shadow: none;
+    }
+    0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+        text-shadow: 0 0 5px #ffa500, 0 0 15px #ffa500, 0 0 20px #ffa500, 0 0 40px #ffa500, 0 0 60px #ff0000, 0 0 10px #ff8d00, 0 0 98px #ff0000;
+        color: #fff6a9;
+    }
+}
+

@@ -1,0 +1,107 @@
+<?xml version="1.0"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+<xs:schema version="1.0"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           elementFormDefault="qualified">
+    
+    <xs:simpleType name="matriType">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[0-9]{4}[A-Z]{3}"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="seguroID">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="S[0-9]{3}"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="tefType">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[0-9]{9}"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="categType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Coche"/>
+            <xs:enumeration value="Moto"/>
+            <xs:enumeration value="Patinete"/>
+        </xs:restriction>
+    </xs:simpleType>
+ 
+    <xs:element name="web">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="vehiculos"/>
+                <xs:element ref="seguros"/>
+                <xs:element ref="usuarios"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <!-- vehiculos -->
+    <xs:element name="vehiculos">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="vehiculo" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="marca" type="xs:string"/>
+                            <xs:element name="modelo" type="xs:string"/>
+                            <xs:choice minOccurs="0" maxOccurs="2">
+                                <xs:element name="autonomia" type="xs:integer"/>
+                                <xs:element name="potencia" type="xs:integer"/>
+                            </xs:choice>
+                            <xs:element name="precio" type="xs:integer"/>
+                            <xs:element name="imagen" type="xs:string" minOccurs="1"/>
+                        </xs:sequence>
+                        <xs:attribute name="tipo" type="categType" use="required"/>
+                        <xs:attribute name="matricula" type="matriType" use="required"/>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+     <!-- Seguros -->
+    <xs:element name="seguros">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="seguro" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="empresa" type="xs:string"/>
+                            <xs:element name="cobertura" type="xs:string"/>
+                            <xs:element name="precio_anual" type="xs:integer"/>
+                            <xs:element name="vehiculo" type="categType"/>
+                        </xs:sequence>
+                        <xs:attribute name="id" type="seguroID" use="required"/>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+     <!-- Usuarios -->
+    <xs:element name="usuarios">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="usuario" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="nombre" type="xs:string" minOccurs="1"/>
+                            <xs:element name="email" type="xs:string" minOccurs="1"/>
+                            <xs:element name="telefono" type="tefType"/>
+                            <xs:element name="id_seguro" type="seguroID"/>
+                        </xs:sequence>
+                        <xs:attribute name="dni" type="xs:string" use="required"/>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

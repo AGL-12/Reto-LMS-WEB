@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="RetoF.xsd">
+  <vehiculos>
+    <vehiculo id="1" tipo="Coche">
+      <marca>Tesla</marca>
+      <modelo>Cybertruck</modelo>
+      <autonomia>800</autonomia>
+      <precio>50000</precio>
+      <imagen>../assets/images/imagenescoche/cybertruck/cybertruck_74.jpg</imagen>
+    </vehiculo>
+    <vehiculo id="2" tipo="Coche">
+      <marca>Tesla</marca>
+      <modelo>Model 3</modelo>
+      <autonomia>580</autonomia>
+      <precio>45000</precio>
+      <imagen>../assets/images/imagenescoche/teslamodel3/teslafondo.jpg</imagen>
+    </vehiculo>
+    <vehiculo id="3" tipo="Coche">
+      <marca>Porsche</marca>
+      <modelo>Taycan</modelo>
+      <autonomia>400</autonomia>
+      <precio>75000</precio>
+      <imagen>../assets/images/imagenescoche/porchetaycan/Taycan_Basis_1.jpg</imagen>
+    </vehiculo>
+    <vehiculo id="4" tipo="Coche">
+      <marca>BMW</marca>
+      <modelo>i7</modelo>
+      <autonomia>625</autonomia>
+      <precio>120000</precio>
+      <imagen>../assets/images/imagenescoche/BMWi7/bmwi7fondo.jpg</imagen>
+    </vehiculo>
+    <vehiculo id="5" tipo="Coche">
+      <marca>Lucid</marca>
+      <modelo>Air Sapphire</modelo>
+      <autonomia>700</autonomia>
+      <precio>150000</precio>
+      <imagen>../assets/images/imagenescoche/lucidsapphire/sapphirefondo.jpg</imagen>
+    </vehiculo>
+    <vehiculo id="6" tipo="Coche">
+      <marca>Audi</marca>
+      <modelo>e-tron GT</modelo>
+      <autonomia>488</autonomia>
+      <precio>100000</precio>
+      <imagen>../assets/images/imagenescoche/audietron/audifondo.jpg</imagen>
+    </vehiculo>
+    <vehiculo id="7" tipo="Coche">
+      <marca>Rivian</marca>
+      <modelo>R1S</modelo>
+      <autonomia>514</autonomia>
+      <precio>70000</precio>
+      <imagen>../assets/images/imagenescoche/rivianr1s/rivianfondo2.jpg</imagen>
+    </vehiculo>
+    <vehiculo id="8" tipo="Coche">
+      <marca>Nio</marca>
+      <modelo>ET7</modelo>
+      <autonomia>1000</autonomia>
+      <precio>80000</precio>
+      <imagen>../assets/images/imagenescoche/nio/niofondo.jpg</imagen>
+    </vehiculo>
+    <vehiculo id="9" tipo="Moto">
+      <marca>Kawasaki</marca>
+      <modelo>Ninja 7 hybrid</modelo>
+      <potencia>n/a</potencia>
+      <precio>15000</precio>
+      <imagen>../assets/images/bici-motos/ninja7hibrid1.png</imagen>
+    </vehiculo>
+    <vehiculo id="10" tipo="Moto">
+      <marca>Kawasaki</marca>
+      <modelo>Z 7 hybrid</modelo>
+      <potencia>n/a</potencia>
+      <precio>14500</precio>
+      <imagen>../assets/images/bici-motos/z7hibrid1.png</imagen>
+    </vehiculo>
+    <vehiculo id="11" tipo="Moto">
+      <marca>BMW</marca>
+      <modelo>CE 04</modelo>
+      <potencia>31 kW (42 CV)</potencia>
+      <precio>12000</precio>
+      <imagen>../assets/images/bici-motos/bmwce041.png</imagen>
+    </vehiculo>
+    <vehiculo id="12" tipo="Moto">
+      <marca>BMW</marca>
+      <modelo>CE 02</modelo>
+      <potencia>n/a</potencia>
+      <precio>10000</precio>
+      <imagen>../assets/images/bici-motos/bmwce021.png</imagen>
+    </vehiculo>
+    <vehiculo id="13" tipo="Moto">
+      <marca>Silence</marca>
+      <modelo>S01</modelo>
+      <potencia>7 kW (9 kW Peak Power)</potencia>
+      <precio>6000</precio>
+      <imagen>../assets/images/bici-motos/silence1.png</imagen>
+    </vehiculo>
+    <vehiculo id="14" tipo="Moto">
+      <marca>Soco</marca>
+      <modelo>Super Soco TC 125</modelo>
+      <potencia>1.9 kW</potencia>
+      <precio>5000</precio>
+      <imagen>../assets/images/bici-motos/soco1.png</imagen>
+    </vehiculo>
+    <vehiculo id="15" tipo="Moto">
+      <marca>Yamaha</marca>
+      <modelo>NEO's</modelo>
+      <potencia>3.4 CV (2.50 kW)</potencia>
+      <precio>4000</precio>
+      <imagen>../assets/images/bici-motos/neos1.png</imagen>
+    </vehiculo>
+    <vehiculo id="16" tipo="Moto">
+      <marca>Honda</marca>
+      <modelo>EM1 e:</modelo>
+      <potencia>2.3 CV (1.69 kW)</potencia>
+      <precio>3000</precio>
+      <imagen>../assets/images/bici-motos/em11.png</imagen>
+    </vehiculo>
+    <vehiculo id="17" tipo="Patinete">
+      <marca>CAMTOP</marca>
+      <modelo>Dual Motor 2400W</modelo>
+      <autonomia>70</autonomia>
+      <potencia>2.4 kW</potencia>
+      <precio>1200</precio>
+      <imagen>../assets/images/patinetes/Camtop01.jpg</imagen>
+    </vehiculo>
+    <vehiculo id="18" tipo="Patinete">
+      <marca>Xiaomi</marca>
+      <modelo>Mi Electric Scooter Pro 2</modelo>
+      <autonomia>45</autonomia>
+      <potencia>0.3 kW</potencia>
+      <precio>650</precio>
+      <imagen>../assets/images/patinetes/Xiomi11.jpeg</imagen>
+    </vehiculo>
+    <vehiculo id="19" tipo="Patinete">
+      <marca>E-Twow</marca>
+      <modelo>Booster</modelo>
+      <autonomia>35</autonomia>
+      <potencia>0.5 kW</potencia>
+      <precio>800</precio>
+      <imagen>../assets/images/patinetes/Etwo.jpg</imagen>
+    </vehiculo>
+    <vehiculo id="20" tipo="Patinete">
+      <marca>Cecotec</marca>
+      <modelo>Bongo Serie A</modelo>
+      <autonomia>25</autonomia>
+      <potencia>0.35 kW</potencia>
+      <precio>500</precio>
+      <imagen>../assets/images/patinetes/Bongo01.png</imagen>
+    </vehiculo>
+    <vehiculo id="21" tipo="Bicicleta">
+      <marca>Orbea</marca>
+      <modelo>Gain D30</modelo>
+      <autonomia>100</autonomia>
+      <potencia>0.25 kW</potencia>
+      <precio>2500</precio>
+      <imagen>../assets/images/bici-motos/ebike1.png</imagen>
+    </vehiculo>
+    <vehiculo id="22" tipo="Bicicleta">
+      <marca>Specialized</marca>
+      <modelo>Turbo Vado SL</modelo>
+      <autonomia>130</autonomia>
+      <potencia>0.35 kW</potencia>
+      <precio>3200</precio>
+      <imagen>../assets/images/bici-motos/booster2.png</imagen>
+    </vehiculo>
+    <vehiculo id="23" tipo="Bicicleta">
+      <marca>Decathlon</marca>
+      <modelo>Riverside 500E</modelo>
+      <autonomia>90</autonomia>
+      <potencia>0.25 kW</potencia>
+      <precio>1500</precio>
+      <imagen>../assets/images/bici-motos/evercross1.png</imagen>
+    </vehiculo>
+    <vehiculo id="1745398461" tipo="Moto">
+      <marca>Kawasaki</marca>
+      <modelo>Ninja</modelo>
+      <autonomia>1000</autonomia>
+      <potencia>200</potencia>
+      <precio>6000</precio>
+      <imagen>../assets/images/bici-motos/Kawasaki_Ninja.png</imagen>
+    </vehiculo>
+  </vehiculos>
+  <seguros>
+    <seguro id="S001">
+      <empresa>Mapfre</empresa>
+      <cobertura>Daños a terceros</cobertura>
+      <precio_anual>500</precio_anual>
+      <vehiculo>Coche</vehiculo>
+    </seguro>
+    <seguro id="S002">
+      <empresa>AXA</empresa>
+      <cobertura>Todo riesgo</cobertura>
+      <precio_anual>600</precio_anual>
+      <vehiculo>Moto</vehiculo>
+    </seguro>
+    <seguro id="S003">
+      <empresa>Allianz</empresa>
+      <cobertura>Robo y accidentes</cobertura>
+      <precio_anual>300</precio_anual>
+      <vehiculo>Patinete</vehiculo>
+    </seguro>
+    <seguro id="S004">
+      <empresa>Mapfre</empresa>
+      <cobertura>Daños a terceros</cobertura>
+      <precio_anual>200</precio_anual>
+      <vehiculo>Bici</vehiculo>
+    </seguro>
+    <seguro id="S005">
+      <empresa/>
+      <cobertura>Daños a terceros</cobertura>
+      <precio_anual>200</precio_anual>
+      <vehiculo>Bici</vehiculo>
+    </seguro>
+  </seguros>
+  <usuarios>
+    <usuario dni="12345678k">
+      <nombre>Alex Garcia</nombre>
+      <email>alex@email.com</email>
+      <telefono>123654789</telefono>
+    </usuario>
+    <usuario dni="12345678M">
+      <nombre>Juan Pérez</nombre>
+      <email>juan.perez@email.com</email>
+      <telefono>123456789</telefono>
+      <vehiculos>
+        <vehiculo id="1" seguro="S001" matricula="9999MMM"/>
+      </vehiculos>
+    </usuario>
+    <usuario dni="70804040V">
+      <nombre>Ana Gómez</nombre>
+      <email>ana.gomez@email.com</email>
+      <telefono>987654321</telefono>
+      <vehiculos>
+        <vehiculo id="2" seguro="S002" matricula="8888MMM"/>
+        <vehiculo id="3" seguro="S003" matricula="1111VVV"/>
+      </vehiculos>
+    </usuario>
+    <usuario dni="30575740P">
+      <nombre>Carlos Ruiz</nombre>
+      <email>carlos.ruiz@email.com</email>
+      <telefono>654987321</telefono>
+      <vehiculos/>
+    </usuario>
+  </usuarios>
+</web>

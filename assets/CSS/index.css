@@ -1,0 +1,411 @@
+@import url("https://fonts.googleapis.com/css?family=Sacramento&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {
+    background: #0A3D62;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    color: white;
+}
+
+.header {
+    width: 100%;
+    height: 100px;
+    background: transparent;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.cover-container h1 {
+    font-size: calc(20px + 18vh);
+    line-height: calc(20px + 20vh);
+    text-shadow: 0 0 5px #ffa500, 0 0 15px #ffa500, 0 0 20px #ffa500, 0 0 40px #ffa500, 0 0 60px #ff0000, 0 0 10px #ff8d00, 0 0 98px #ff0000;
+    color: #fff6a9;
+    font-family: "Sacramento", cursive;
+    text-align: center;
+    animation: blink 12s infinite;
+    -webkit-animation: blink 12s infinite;
+    padding-top: 30px;
+}
+
+/*Letras neon*/
+
+@keyframes blink {
+
+    20%,
+    24%,
+    55% {
+        color: #111;
+        text-shadow: none;
+    }
+
+    0%,
+    19%,
+    21%,
+    23%,
+    25%,
+    54%,
+    56%,
+    100% {
+
+        text-shadow: 0 0 5px #ffa500, 0 0 15px #ffa500, 0 0 20px #ffa500, 0 0 40px #ffa500, 0 0 60px #ff0000, 0 0 10px #ff8d00, 0 0 98px #ff0000;
+        color: #fff6a9;
+    }
+}
+
+
+/* Botón de categorías */
+.btn-menu {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-left: -50px;
+}
+
+.btn-menu label {
+    font-size: 18px;
+    font-weight: bold;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.btn-menu label:hover {
+    background-color: #fb8d01;
+    color: white;
+}
+
+.btn-menu label::after {
+    content: '';
+    display: block;
+    height: 2px;
+    background: white;
+    width: 0;
+    transition: width 0.3s;
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+}
+
+.btn-menu label:hover::after {
+    width: 100%;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    margin-left: 200px;
+    margin-right: 50px;
+}
+
+/* Campo de búsqueda */
+.menu input[type="text"] {
+    padding: 12px;
+    border-radius: 5px;
+    font-size: 16px;
+    border: 2px solid transparent;
+    width: 500px;
+    transition: border-color 0.3s;
+}
+
+.menu input[type="text"]:focus {
+    border-color: #003366;
+}
+
+.menu button {
+    background-color: #fb8d01;
+    padding: 12px;
+    border: 0;
+    border-radius: 5px;
+    color: #fff;
+}
+
+/* Enlaces del menú */
+.menu a {
+    font-size: 18px;
+    font-weight: bold;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 10px 15px;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.menu a:hover {
+    background-color: #fb8d01;
+    color: white;
+}
+
+.menu a::after {
+    content: '';
+    display: block;
+    height: 2px;
+    background: white;
+    width: 0;
+    transition: width 0.3s;
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+}
+
+.menu a:hover::after {
+    width: 100%;
+}
+
+#btn-menu {
+    display: none;
+}
+
+#btn-menu:checked~.capa,
+#btn-menu:checked~body {
+    overflow: hidden;
+}
+
+.container-menu {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 20;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 500ms ease;
+}
+
+#btn-menu:checked~.container-menu {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Ajustes el menú interno */
+.cont-menu {
+    width: 100%;
+    max-width: 250px;
+    height: 100vh;
+    overflow-y: auto;
+    background: #000080;
+    transition: transform 500ms ease;
+    transform: translateX(-100%);
+}
+
+#btn-menu:checked~.container-menu .cont-menu {
+    transform: translateX(0);
+}
+
+.cont-menu nav {
+    transform: translateY(15%);
+}
+
+.cont-menu nav a {
+    display: block;
+    text-decoration: none;
+    padding: 20px;
+    color: #c7c7c7;
+    border-left: 5px solid transparent;
+    transition: all 400ms ease;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.cont-menu nav a:hover {
+    border-left: 5px solid #fb8d01;
+    background: #1f1f1f;
+}
+
+
+.cont-menu nav h1 {
+    cursor: pointer;
+    color: #fb8d01;
+    font-size: 22px;
+    font-weight: bold;
+    text-align: left;
+    padding-right: 100px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+
+.cont-menu nav {
+    transform: translateY(10%);
+}
+
+
+.cont-menu label {
+    position: absolute;
+    right: 5px;
+    top: 10px;
+    color: #ffffff;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+/* cards */
+.cards-container {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex: 2;
+    gap: 20px;
+    justify-content: center;
+    align-items: stretch;
+}
+
+.card {
+    background: #ffffff;
+    color: #000080;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    padding: 20px;
+    transition: transform 0.3s ease;
+    width: 30%;
+    /* Ancho fijo para las tarjetas */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 400px;
+    /* Altura fija para todas las tarjetas */
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card-image {
+    max-width: 480px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.card h2 {
+    font-size: 1.5em;
+    color: #fb8d01;
+    margin-bottom: 10px;
+}
+
+.card p {
+    font-size: 1em;
+    margin: 10px 0;
+}
+
+.buy-button {
+    background-color: #fb8d01;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1em;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.buy-button:hover {
+    background-color: #e67e00;
+}
+
+/* Estilos del pie de página */
+.footer {
+    background-color: #003366;
+    color: #ffffff;
+    padding: 40px 0;
+    width: 100%;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+
+.footer-section {
+    flex: 1;
+    margin: 10px;
+}
+
+.footer-section h3 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    color: #fb8d01;
+}
+
+.footer-section p,
+.footer-section a {
+    font-size: 16px;
+    color: #c7c7c7;
+    text-decoration: none;
+    margin-bottom: 10px;
+    display: block;
+    transition: color 0.3s;
+}
+
+.footer-section a:hover {
+    color: #ffffff;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #002244;
+    font-size: 14px;
+    color: #c7c7c7;
+}
+
+/* Estilos de redes sociales en el pie de página */
+.social-media {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.social-media a {
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.social-media a img {
+    width: 30px;
+    height: 30px;
+}
+
+.twitter-icon img {
+    filter: brightness(0) invert(1);
+}
+
+.social-media a:hover {
+    transform: scale(1.1);
+    /* Efecto de aumento al pasar el cursor */
+}
